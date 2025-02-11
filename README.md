@@ -6,6 +6,6 @@
    * [graphs](graphs)
    * [trees](trees)
    ## [problemas](https://docs.google.com/spreadsheets/d/19bpyvDnt-eyUdRKghx2C5kwCDbgAVFsxkn3tlm5tFL8/edit?pli=1&gid=2144856859#gid=2144856859)
-	* [cses](CSES-PROBLEMSET)
-    * [codeforces](codeforces)
+   * [cses](CSES-PROBLEMSET)
+   * [codeforces](codeforces)
  
