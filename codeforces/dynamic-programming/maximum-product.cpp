@@ -13,6 +13,11 @@
 
 using namespace std;
 
+/*
+problem: find the number in range [a, b] that has the maximum product of its digits.
+solution: digit dp 
+ */
+
 int a, b, q[10][8];
 deque<int> l, r;
 map<coisa, int> last, dp;
