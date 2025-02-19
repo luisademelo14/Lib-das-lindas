@@ -5,7 +5,7 @@
    * [math](math)
    * [geometry](geometry)
    * [graphs](graphs)
-	* [shortest path](graphs/shortest-path)
+		 [shortest path](graphs/shortest-path)
    * [strings](strings)
    * [trees](trees)
    ## [problems](https://docs.google.com/spreadsheets/d/19bpyvDnt-eyUdRKghx2C5kwCDbgAVFsxkn3tlm5tFL8/edit?pli=1&gid=2144856859#gid=2144856859)
