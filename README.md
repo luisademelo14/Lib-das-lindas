@@ -5,6 +5,7 @@
    * [math](math)
    * [geometry](geometry)
    * [graphs](graphs)
+	<br />
 		 [shortest path](graphs/shortest-path)
    * [strings](strings)
    * [trees](trees)
