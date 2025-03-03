@@ -3,7 +3,7 @@ Problem: Consider a xor pyramid where each number is the xor of lower-left and l
 Solution: Lucas theorem 
  */
 
-int n, resp, arr[MAX];
+int n, resp, arr[MAXN];
  
 int main()
 {_

@@ -2,7 +2,7 @@
 // transformar a string a na string b
 // operacoes possiveis: add char, remover char ou trocar um char por outro
 int edit_distance(string a, string b, int m, int n){
-	int dp[m+1][n+1];
+	int dp[MAXN+1][MAXN+1];
 	for(int i=0; i<=m; i++){
 		for(int j=0; j<=n; j++){
 			// se a primeira string esta vazia, inserimos todos os elementos da segunda nela

@@ -6,61 +6,70 @@
 
 // n = numero de vertices da arvore
 // l = ceil(log(n))
+
 int n, l;
 
-vector<vector<int>> tree;
 
+vector<vector<ii>> tree;
 int timer;
-
-vector<int> t_in, t_out;
-
+vector<int> t_in (MAXN);
+vector<int> t_out (MAXN);
 vector<vector<int>> up;
+vector<int> level (MAXN);
 
-void dfs(int v, int parent){
-    t_in[v] = ++timer;
-    // imediatamente acima
-    up[v][0] = parent;
+void dfs(int u, int p){
+    t_in[u] = ++timer;
+    int temp = 0;
 
-    for(int i=1; i<=l; i++)
-        up[v][i] = up[up[v][i-1]][i-1];
 
-    for(int u : tree[v]){
-        if(u!=parent)
-            dfs(u,v);
+    for(auto x : tree[u]){
+        if(x.first==p && u!=0){
+            temp = x.second;
+            break;
+        }
     }
 
-    t_out[v] = ++timer;
+    level[u] = level[p] + temp;
+    up[u][0] = p;
+    for (int i = 1; i < l; i++)
+    {
+        up[u][i] = up[up[u][i - 1]][i - 1];
+    }
+
+    for (int i = 0; i < tree[u].size(); i++)
+    {
+        int v = tree[u][i].first;
+        if (v != p) dfs(v, u);
+    }
+
+    t_out[u] = ++timer;
 }
 
-// verifica de u eh ancestral de v
+// verifica se u é ancestral de v
 bool is_ancestor(int u, int v){
-    return ((t_in[u] <= t_out[v]) && (t_out[u] >= t_out[v]));
+    return (t_in[u] <= t_in[v] && t_out[u] >= t_out[v]);
 }
 
 // calcula o lca de u e v
 int lca(int u, int v){
-    if(is_ancestor(u,v))
-        return u;
 
-    if(is_ancestor(v,u))
-        return v;
+    if (is_ancestor(u, v)) return u;
+    if (is_ancestor(v, u)) return v;
 
-    for(int i=l; i>=0; i--){
-        if(!is_ancestor(up[u][i], v))
-            u = up[u][i];
+    for (int i = 21; i >= 0; i--){
+        if (!is_ancestor(up[v][i], u))
+            v = up[v][i]; 
     }
 
-    return up[u][0];
+    return up[v][0];
 }
 
-void preprocess(int root){
-    t_in.resize(n+1);
-    t_out.resize(n+1);
+void preprocess(int root) {
+    t_in.resize(MAXN);
+    t_out.resize(MAXN);
     timer = 0;
     l = ceil(log2(n));
+    up.assign(MAXN, vector<int>(22, 0)); 
 
-    up.assign(n, vector<int>(l+1));
-
-    dfs(root, -1);
+    dfs(root, 0);
 }
-
