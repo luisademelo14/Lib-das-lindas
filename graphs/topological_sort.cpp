@@ -5,7 +5,7 @@ int n; // numero de vertices
 
 // incoming[i] representa a quantidade de vertices que devem vir antes de i
 vector<int> get_incoming(){
-    vector<int> incoming(n, 0);
+    vector<int> incoming(MAXN, 0);
     for(int i=0; i<n; i++){
         for(int neighbour : graph[i]){
             incoming[neighbour]++;

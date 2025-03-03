@@ -30,14 +30,14 @@
     // vetor a com as constantes do sistema
     // vetor n com os fatores primos de N
 
-ll chinese_remainder_theorem(vector<ll> a, vector<ll>n){ 
+int chinese_remainder_theorem(vector<int> a, vector<int>n){ 
     int size = (int)a.size();
-    ll x = 0; // variavel do sistema
+    int x = 0; // variavel do sistema
 
-    ll N = 1; // numero formado a partir dos primos 
+    int N = 1; // numero formado a partir dos primos 
 
-    vector<ll> m (size); // vetor com as constantes mi pra solucao
-    vector<ll> minv (size); // vetor com os inversos modulares de mi
+    vector<int> m (size); // vetor com as constantes mi pra solucao
+    vector<int> minv (size); // vetor com os inversos modulares de mi
 
 
     for(int i=0; i<size; i++){

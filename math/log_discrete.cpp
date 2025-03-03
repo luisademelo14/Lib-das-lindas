@@ -19,7 +19,7 @@ int dlog(int b, int a, int m) {
 	}
 
 	int sq = sqrt(m)+1, giant = 1;
-	for (int i = 0; i < sq; i++) giant = (ll) giant * a % m;
+	for (int i = 0; i < sq; i++) giant = (int) giant * a % m;
 
 	vector<pair<int, int>> baby;
 	for (int i = 0, cur = b; i <= sq; i++) {
@@ -30,7 +30,7 @@ int dlog(int b, int a, int m) {
 
 	for (int j = 1, cur = k; j <= sq; j++) {
 		cur = (ll) cur * giant % m;
-		auto it = lower_bound(baby.begin(), baby.end(), pair(cur, INF));
+		auto it = lower_bound(baby.begin(), baby.end(), pair(cur, MOD));
 		if (it != baby.begin() and (--it)->first == cur)
 			return sq * j - it->second + shift;
 	}
