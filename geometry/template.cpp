@@ -10,6 +10,11 @@ struct tpoint
     {
         return {x - q.x, y - q.y};
     }
+
+    bool operator<(const tpoint& q) const {
+        if(x != q.x) return x<q.x;
+        return y<q.y;
+    }
     double operator ~() const 
     {
         return hypot(x, y);
