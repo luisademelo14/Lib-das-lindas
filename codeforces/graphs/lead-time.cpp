@@ -13,6 +13,11 @@
 
 using namespace std;
 
+/*
+problem: maior caminho em dag + reconstruir caminho se tiver só 1 
+ 
+ */
+
 int q, grau[MAXN], dist[MAXN], last[MAXN], arr[MAXN], n, m, a, b, c;
 vector<ii> grafo[MAXN];
 vector<int> path;
