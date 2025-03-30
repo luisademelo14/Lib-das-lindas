@@ -14,6 +14,13 @@
 
 using namespace std;
 
+/*
+problem: given n rectancles with no intersection, what is the minimum area you can have by sliding them on x axis.
+solution: brute or topo-sort
+ 
+ 
+ */
+
 struct tpoint
 {
     int x, y;
