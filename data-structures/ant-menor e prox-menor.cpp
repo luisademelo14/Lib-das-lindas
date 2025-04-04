@@ -1,5 +1,9 @@
+/*
+v[] -> vetor a ser comparado o próximo e anterior menor
+ */
+
 void anterior_menor(){
-    ant[1] = 0;
+    ant[0] = 0;
     for(int i=1; i<=n; i++){
         ant[i] = i-1;
         while(v[i]<=v[ant[i]]) ant[i] = ant[ant[i]];
